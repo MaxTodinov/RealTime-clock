@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time digital clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+
+    <div class="digital-clock">
+        <div class="time">
+            <span class="hours">00</span>
+            <span class="dots">:</span>
+            <span class="minutes">00</span>
+            <span class="dots">:</span>
+            <span class="seconds">00</span>
+            <div class="right-side">
+                <span class="period">AM/PM</span>
+            </div>
+        </div>
+        <div class="calendar">
+            <span class="day-number">00</span>/
+            <span class="month-number">00</span>/
+            <span class="year">0000</span>
+        </div>
+    </div>
+
+    <script>
+        //Get current time in js
+        function clock(){
+            var today = new Date();
+
+            var hours = today.getHours();
+            var minutes = today.getMinutes();
+            var seconds = today.getSeconds();
+            let period = "AM";
+
+            //Set the time period(AM/PM)
+            if(hours >=12){
+                period = "PM";
+            }
+
+            //Set the 12-hour clock format
+            hours = hours > 12 ? hours % 12 : hours;
+
+            //Add the 0 for the values lower than 10
+            if(minutes < 10){
+                minutes = "0" + minutes;
+            }
+
+            if(seconds < 10){
+                seconds = "0" + seconds;
+            }
+
+            if(hours < 10){
+                hours = "0" + hours;
+            }
+            
+            document.querySelector(".hours").innerHTML = hours;
+            document.querySelector(".minutes").innerHTML = minutes;
+            document.querySelector(".seconds").innerHTML = seconds;
+            document.querySelector(".period").innerHTML = period;
+        }
+
+        var updateClock = setInterval(clock, 1000);
+
+        //Get the date in js
+        var today = new Date();
+        const dayNumber = today.getDate();
+        const year = today.getFullYear();
+        const monthNumber = today.toLocaleString("default", {month: "numeric"});
+
+        document.querySelector(".day-number").innerHTML = dayNumber;
+        document.querySelector(".month-number").innerHTML = monthNumber;
+        document.querySelector(".year").innerHTML = year;
+    </script>
+</body>
+</html>

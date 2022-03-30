@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.digital-clock{
+    position: relative;
+    color: #fff;
+    background: rgb(59, 59, 59);
+    width: 475px;
+    padding: 20px 45px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;  
+}
+
+.time{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hours, .dots, .minutes, .seconds{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    padding: 0 5px;
+    line-height: 125px;
+}
+
+.hours, .minutes, .seconds{
+    font-size: 5.5em;
+    width: 115px;
+}
+
+.dots{
+    font-size: 5em;
+    color: rgb(190, 190, 190);
+}
+
+.hours, .minutes, .seconds{
+    background: -webkit-linear-gradient(90deg, rgb(0, 255, 255), rgb(221, 189, 10));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+.right-side{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 3px;
+}
+
+.period{
+    font-size: 0.9em;
+    font-weight: 550;
+}
+
+.period{
+    transform: translateY(-25px);
+}
+
+.calendar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+
+.day-name, .day-number, .year{
+    margin-left: 8px;
+}
